@@ -12,18 +12,19 @@ struct Transaccion{
     float precio;
     float total;
 };
-	int totalcompra;
+    int totalcompra;
     int totalventa;
     int totalfinal;
 
-	bool stateProgram = true;
+    bool stateProgram = true;
 
 void RegisterTransaction (Transaccion);
 void ViewTransaction (void);
 void SearchTransaction (void);
 void UpdateTransaction (void);
 void calculateProfitLoss();
-void screenEnd();
+
+
 const int MaxTransaccion=100;
 Transaccion transacciones[MaxTransaccion];
 int cont_transaccion=0;
@@ -108,6 +109,7 @@ void RegisterTransaction(Transaccion t){//registro y creacion de transacciones
 
 void ViewTransaction (){//visualizacion de las transacciones creadas
 	cout<<"----------------------------"<<endl;
+	
     for (int i = 0; i < cont_transaccion; i++){
     	cout<<"TRANSACCION:"<<endl;
         cout<<"tipo: "<<transacciones[i].tipo<<endl;
@@ -117,6 +119,7 @@ void ViewTransaction (){//visualizacion de las transacciones creadas
         cout<<"total: "<<transacciones[i].total<<endl;
         cout<<""<<endl;
     }
+	
     cout<<"----------------------------"<<endl;
 }
 
@@ -200,11 +203,4 @@ void calculateProfitLoss(){//visualizador de ganancias y perdidas realizadas en 
 	cout<<"----------------------------"<<endl;
 }
 
-void screenEnd(void){	//finalizacion del programa
-	cout<<"----------------------------"<<endl;
-	cout<<"programa finalizado"<<endl;
-	cout<<"----------------------------"<<endl;
-	stateProgram = false;
-	int main();
-}
 
